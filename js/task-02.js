@@ -7,8 +7,10 @@ const ingredients = [
   "Condiments",
 ];
 
-const ingredientsItemEl = document.createElement("li");
-ingredientsItemEl.classList.add("item");
-ingredientsItemEl.textContent = ingredients;
-const navIngredientsEl = document.querySelector(".ingredients");
-navIngredientsEl.appendChild(ingredientsItemEl);
+const ingrLiEl = document.createElement("li");
+ingrLiEl.classList.add("item");
+ingrLiEl.textContent = "Ingredient";
+const listIngr = document.querySelector(".ingredients");
+// listIngr.appendChild(ingrLiEl);
+
+console.log(ingrLiEl);
