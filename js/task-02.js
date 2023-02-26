@@ -7,10 +7,17 @@ const ingredients = [
   "Condiments",
 ];
 
-const ingrLiEl = document.createElement("li");
-ingrLiEl.classList.add("item");
-ingrLiEl.textContent = "Ingredient";
-const listIngr = document.querySelector(".ingredients");
-// listIngr.appendChild(ingrLiEl);
+const listIngr = document.querySelector("#ingredients");
 
-console.log(ingrLiEl);
+const option = ingredients[0];
+
+const titleEl = document.createElement("li");
+titleEl.classList.add("item");
+const navLinkEl = document.createElement("a");
+navLinkEl.classList.add("site-nav__link");
+navLinkEl.textContent = option;
+navLinkEl.href = "/profile";
+
+titleEl.appendChild(navLinkEl);
+
+listIngr.appendChild(titleEl);
