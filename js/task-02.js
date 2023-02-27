@@ -9,15 +9,23 @@ const ingredients = [
 
 const listIngr = document.querySelector("#ingredients");
 
-const option = ingredients[0];
+// const elements = [];
 
-const titleEl = document.createElement("li");
-titleEl.classList.add("item");
-const navLinkEl = document.createElement("a");
-navLinkEl.classList.add("site-nav__link");
-navLinkEl.textContent = option;
-navLinkEl.href = "/profile";
+// for (let i = 0; i < ingredients.length; i += 1) {
+//   const titleEl = document.createElement("li");
+//   titleEl.classList.add("item");
+//   titleEl.textContent = ingredients[i];
+//   elements.push(titleEl);
+// }
 
-titleEl.appendChild(navLinkEl);
+const elements = ingredients.map((option) => {
+  const titleEl = document.createElement("li");
+  titleEl.classList.add("item");
+  titleEl.textContent = option;
 
-listIngr.appendChild(titleEl);
+  return titleEl;
+});
+
+console.log(elements);
+
+listIngr.append(...elements);
