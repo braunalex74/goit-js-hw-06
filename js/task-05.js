@@ -5,7 +5,7 @@ inputtxt.addEventListener("input", handleInputChange);
 
 function handleInputChange(event) {
   outputtxt.textContent = event.currentTarget.value;
-  if (event.currentTarget.value.trim() === "") {
+  if (event.currentTarget.value === "") {
     outputtxt.textContent = "Anonymous";
   }
 }
