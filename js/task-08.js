@@ -19,3 +19,13 @@ function handleSubmit(event) {
   }
   event.currentTarget.reset();
 }
+
+// function handleSubmit(event) {
+//   event.preventDefault();
+//   const formData = new FormData(event.currentTarget);
+
+//   formData.forEach((password, email) => {
+//     console.log("handleSubmit -> name", email);
+//     console.log("handleSubmit -> value", password);
+//   });
+// }
