@@ -1,4 +1,5 @@
 const onTexInput = document.querySelector("#validation-input");
+
 onTexInput.addEventListener("blur", (event) => {
   if (
     event.currentTarget.value.length >=
