@@ -4,13 +4,28 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const handleIdControls = document.querySelector("#constrols");
-const handleNumber = document.querySelector('[type="number"]');
-const handleCreateBtn = document.querySelector("button[data-create]");
-const handleDestroyBtn = document.querySelector("button[data-destroy]");
-const handleIdBoxes = document.querySelector("#boxes");
+const refs = {
+  handleIdControls: document.querySelector("#controls"),
+  handleInputNumber: document.querySelector("input"),
+  handleCreateBtn: document.querySelector("[data-create]"),
+  handleDestroyBtn: document.querySelector("[data-destroy]"),
+  handleIdBoxes: document.querySelector("#boxes"),
+};
 
-handleIdBoxes.style.display = "flex";
-handleIdBoxes.style.flexWrap = "wrap";
-handleIdBoxes.style.alignItems = "center";
-handleIdBoxes.style.marginTop = "30px";
+function createBoxes(amount) {
+  for (let i = 0; i < amount; i++) {
+    const divEl = document.createElement("div");
+    divEl.style.width = `${30 + i * 10}px`;
+    divEl.style.height = `${30 + i * 10}px`;
+    divEl.style.backgroundColor = getRandomHexColor();
+    refs.handleIdBoxes.appendChild(divEl);
+  }
+}
+
+refs.handleCreateBtn.addEventListener("click", () => {
+  createBoxes(refs.handleInputNumber.value);
+});
+
+refs.handleDestroyBtn.addEventListener("click", () => {
+  refs.handleIdBoxes.innerHTML = "";
+});
